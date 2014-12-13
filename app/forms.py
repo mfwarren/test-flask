@@ -10,6 +10,10 @@ class LoginForm(Form):
     remember_me = BooleanField('remember_me', default=False)
 
 
+class SearchForm(Form):
+    search = StringField('search', validators=[DataRequired()])
+
+
 class PostForm(Form):
     post = StringField('post', validators=[DataRequired()])
 
