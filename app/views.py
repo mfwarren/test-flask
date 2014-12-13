@@ -7,7 +7,7 @@ from app import app, db, lm, oid
 from .forms import LoginForm, EditForm, PostForm, SearchForm
 from .models import User, Post
 from config import POSTS_PER_PAGE, MAX_SEARCH_RESULTS
-from emails import follower_notification
+from .emails import follower_notification
 
 
 @app.before_request
