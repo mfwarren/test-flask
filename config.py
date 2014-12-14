@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -27,3 +28,9 @@ MAIL_PASSWORD = None
 
 # administrator list
 ADMINS = ['me@example.com']
+
+
+LANGUAGES = {
+    'en': 'English',
+    'es': 'Español'
+}

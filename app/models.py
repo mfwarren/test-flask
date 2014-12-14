@@ -3,6 +3,7 @@ from hashlib import md5
 
 
 import sys
+import re
 if sys.version_info >= (3, 0):
     enable_search = False
 else:
@@ -65,6 +66,10 @@ class User(db.Model):
 
     def avatar(self, size):
         return 'http://www.gravatar.com/avatar/%s?d=mm&s=%d' % (md5(self.email.encode('utf-8')).hexdigest(), size)
+
+    @staticmethod
+    def make_valid_nickname(nickname):
+        return re.sub('[^a-zA-Z0-9_\.]', '', nickname)
 
     @staticmethod
     def make_unique_nickname(nickname):

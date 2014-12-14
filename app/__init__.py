@@ -21,6 +21,9 @@ mail = Mail(app)
 from .momentjs import momentjs
 app.jinja_env.globals['momentjs'] = momentjs
 
+from flask.ext.babel import Babel
+babel = Babel(app)
+
 if not app.debug:
     import logging
     from logging.handlers import SMTPHandler
