@@ -18,6 +18,9 @@ oid = OpenID(app, os.path.join(basedir, 'tmp'))
 from flask.ext.mail import Mail
 mail = Mail(app)
 
+from .momentjs import momentjs
+app.jinja_env.globals['momentjs'] = momentjs
+
 if not app.debug:
     import logging
     from logging.handlers import SMTPHandler
